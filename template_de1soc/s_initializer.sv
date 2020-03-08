@@ -13,7 +13,7 @@ module s_initializer (
     parameter [4:0] IDLE = 5'b00_010;  
     parameter [4:0] DONE = 5'b10_011;
 
-    logic [7:0]count;
+    logic [7:0]count = 8'b0;
     logic [4:0]state;
 
     always_ff @(posedge clk, posedge rst)

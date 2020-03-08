@@ -43,7 +43,7 @@ module s_swapper (
         else 
         begin
             case (state)
-                IDLE :              state = (start && index_i < 8'd256) ? SI_RETRIEVE : IDLE;
+                IDLE :              state = (start) ? SI_RETRIEVE : IDLE;
                 SI_RETRIEVE :       begin
                                       index_i = index_i + 8'd1;
                                       if (index_i == 8'd256) state = IDLE;

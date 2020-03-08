@@ -59,6 +59,6 @@ module top_controller (
 
         address <= state[4] ? s_init_address : (state[5] ? s_swap_address : 8'b0);
         data <= state[4] ? s_init_data : (state[5] ? s_swap_data : 8'b0);
-        s_mem_wren <= state[4] ? s_init_wren : (state[5] ? s_swap_wren : 8'b0);
+        s_mem_wren <= state[4] ? s_init_wren : (state[5] ? s_swap_wren : 1'b0);
     end
 endmodule

@@ -12,7 +12,7 @@ module ksa(CLOCK_50, KEY, SW, LEDR, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 		
 	SevenSegmentDisplayDecoder sevenSeg(ssOut, nIn);
 	
-	s_memory s_mem(address_s, clk, data_s, 1'b1, 8'b0);
+	s_memory s_mem(address_s, clk, data_s, write_en, s_output);
 	
 	top_controller top_c(clk, s_init_rst, 1'b1, s_output, address_s, data_s, write_en, top_done);
 

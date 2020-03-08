@@ -1,0 +1,44 @@
+module s_initializer (
+    input clk,
+    input rst,
+    input start,
+    output [7:0]address,
+    output [7:0]data,
+    output done
+);
+
+    parameter [3:0] INCREMENT = 4'b0_001; 
+    parameter [3:0] IDLE = 4'b0_010;  
+    parameter [3:0] DONE = 4'b1_011;
+
+    logic [7:0]count;
+    logic [3:0]state;
+
+    always_comb @(posedge clk, posedge rst)
+    begin
+        if (rst) begin
+            count <= 8'b0;
+            state <= IDLE;
+        end
+
+        else 
+        begin
+            case (state)
+                IDLE :      state <= (start && (count < 256)) ? INCREMENT : IDLE; 
+                INCREMENT : begin
+                                state <= (count == 254) ? INCREMENT : DONE;
+                                count <= count + 1;
+                            end
+                DONE :      state <= IDLE;
+                default:    state <= IDLE;
+        end
+    end
+
+    always_comb begin
+        address <= count;
+        data <= count;   
+        done <= state[3];
+    end
+
+
+endmodule

@@ -2,7 +2,7 @@ module top_controller (
     input clk,
     input rst,
     input start,
-    input s_output,
+    input logic [7:0] s_read_data,
 
     output logic [7:0]address,
     output logic [7:0]data,
@@ -29,9 +29,9 @@ module top_controller (
     logic [7:0] s_swap_address;
     logic [7:0] s_swap_data;
 
-    s_initializer init(clk, rst, s_init_start, s_init_address, s_init_data, s_init_wren, s_init_done);
+    s_initializer init(clk, rst, s_init_start, s_read_data, s_init_address, s_init_data, s_init_wren, s_init_done);
 
-	s_swapper swap(clk, rst, s_swap_start, s_output, 24'b00000000_00000010_01001001, s_swap_address, s_swap_data, s_swap_wren, s_swap_done);
+	s_swapper swap(clk, rst, s_swap_start, s_read_data, 24'b00000000_00000010_01001001, s_swap_address, s_swap_data, s_swap_wren, s_swap_done);
 
     always_ff @(posedge clk, posedge rst)
     begin
@@ -43,7 +43,7 @@ module top_controller (
         begin
             case (state)
                 IDLE :      state <= start ? S_INIT : IDLE; 
-                S_INIT :    state <= s_init_done ? DONE : S_INIT;
+                S_INIT :    state <= s_init_done ? S_SWAP : S_INIT;
                 S_SWAP :    state <= s_swap_done ? DONE : S_SWAP;
                 DONE :      state <= DONE;  // STAY IN DONE FOR NOW, ONLY RUN ONCE
                 default:    state <= IDLE;

@@ -10,15 +10,15 @@ cModel Technology
 dC:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/HW/HW3/Q1
 vksa
 Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
-Z1 !s110 1583645365
+Z1 !s110 1583699443
 !i10b 1
-!s100 E??D3H9UChdoFzd<YAU:K0
-InB[XEH;26T[E0MdfRN?8o1
+!s100 j@^o_?NkURPlg_XIhDHJo0
+I11FSgD2GNM>>R`m[jB^5h3
 Z2 V`JN@9S9cnhjKRR_L]QIcM3
 !s105 ksa_sv_unit
 S1
 Z3 dC:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc
-w1583644692
+w1583698605
 8C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/ksa.sv
 FC:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/ksa.sv
 L0 1
@@ -26,7 +26,7 @@ Z4 OV;L;10.3c;59
 r1
 !s85 0
 31
-!s108 1583645365.452000
+!s108 1583699443.214000
 !s107 C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/ksa.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/ksa.sv|
 !i113 1
@@ -35,13 +35,13 @@ vksa_tb
 R0
 R1
 !i10b 1
-!s100 NgenK]WH1FN@Q8O^KPS`c0
-II[gi495]zZ>A:HGo?knO63
+!s100 aBSI`NAGkNmZjf<<iZ:E43
+I=;1T^4mG7L_@RnHecXmIP3
 R2
 !s105 ksa_tb_sv_unit
 S1
 R3
-w1583644596
+w1583649085
 8C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/ksa_tb.sv
 FC:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/ksa_tb.sv
 L0 2
@@ -49,7 +49,7 @@ R4
 r1
 !s85 0
 31
-!s108 1583645365.695000
+!s108 1583699443.341000
 !s107 C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/ksa_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/ksa_tb.sv|
 !i113 1
@@ -58,13 +58,13 @@ vs_initializer
 R0
 R1
 !i10b 1
-!s100 3ho73?>Z7`kog?eaQ61;72
-IV6K3F;6?]?0d@KJecc9MS2
+!s100 `Tlj@TW9DX[k2<<nPFLed0
+IKofPF8ihZ1Y[TQ]TTk]hO2
 R2
 !s105 s_initializer_sv_unit
 S1
 R3
-w1583645069
+w1583699134
 8C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_initializer.sv
 FC:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_initializer.sv
 L0 1
@@ -72,19 +72,19 @@ R4
 r1
 !s85 0
 31
-!s108 1583645365.890000
+!s108 1583699443.461000
 !s107 C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_initializer.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_initializer.sv|
 !i113 1
 R5
 vs_memory
-Z6 !s110 1583645366
+R1
 !i10b 1
 !s100 `cnG=O?1V=?CoW@z7oUU>1
 ImFRZB=U?7N1;zBQ380d:51
 R2
 R3
-w1583450579
+w1583454179
 8C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_memory_bb.v
 FC:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_memory_bb.v
 L0 35
@@ -92,14 +92,14 @@ R4
 r1
 !s85 0
 31
-!s108 1583645366.700000
+!s108 1583699443.930000
 !s107 C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_memory_bb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_memory_bb.v|
 !i113 1
-Z7 o-work work
+Z6 o-work work
 vs_swapper
 R0
-R6
+R1
 !i10b 1
 !s100 >X?^Y3NA90U[fN<T[G]O61
 IScT`m64hTN0Be=N^0mY6H2
@@ -107,7 +107,7 @@ R2
 !s105 s_swapper_sv_unit
 S1
 R3
-w1583645355
+w1583698608
 8C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_swapper.sv
 FC:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_swapper.sv
 L0 1
@@ -115,7 +115,7 @@ R4
 r1
 !s85 0
 31
-!s108 1583645366.286000
+!s108 1583699443.687000
 !s107 C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_swapper.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/s_swapper.sv|
 !i113 1
@@ -139,19 +139,19 @@ r1
 !s107 C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/SevenSegmentDisplayDecoder.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/SevenSegmentDisplayDecoder.v|
 !i113 1
-R7
+R6
 n@seven@segment@display@decoder
 vtop_controller
 R0
-R6
+R1
 !i10b 1
-!s100 g6kg]zA3Da3;^Ab9czAm11
-IHIQfV;CjASl@HlSFGB9<J1
+!s100 7^74R>H3FhJJ:Be<`Xg;=3
+IXPfc[_:JPLoT=e[@108?52
 R2
 !s105 top_controller_sv_unit
 S1
 R3
-w1583644156
+w1583698699
 8C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/top_controller.sv
 FC:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/top_controller.sv
 L0 1
@@ -159,7 +159,7 @@ R4
 r1
 !s85 0
 31
-!s108 1583645366.485000
+!s108 1583699443.810000
 !s107 C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/top_controller.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Luke Bidulka/Documents/Education/School/Third Year/2nd/CPEN 311/Labs/Lab 4/CPEN311_LAB4/template_de1soc/top_controller.sv|
 !i113 1

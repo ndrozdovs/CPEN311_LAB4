@@ -30,7 +30,7 @@ module decrypter (
     parameter [11:0] SJ_STORE_NEW = 12'b0000_0001_1100;
     parameter [11:0] SJ_STORE_NEW_CONFIRM = 12'b0000_0001_1101;
 
-    parameter [11:0] GET_F_ADDRESS = 12'b0000_0000_1010;
+    parameter [11:0] GET_F_ADDRESS = 12'b0010_0000_1010;
     parameter [11:0] BULLSHIT_WAIT_NEW = 12'b0000_0000_1011;
     parameter [11:0] F_RETRIEVE = 12'b0000_0000_1100;
     parameter [11:0] ENC_RETRIEVE = 12'b0000_0000_1101;

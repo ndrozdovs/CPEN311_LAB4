@@ -16,12 +16,12 @@
    <SOPCModuleParameter>
     <C>3</C>
     <Name>SEND_WIDTHS</Name>
-    <Value>7</Value>
+    <Value>7 7 7</Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>4</C>
     <Name>RECEIVE_WIDTHS</Name>
-    <Value>28</Value>
+    <Value>28 28 28</Value>
    </SOPCModuleParameter>
   </SOPCModule>
   <SOPCModule>
@@ -30,7 +30,7 @@
    <SOPCModuleParameter>
     <C>6</C>
     <Name>FRAGMENTS</Name>
-    <Value>{{name clock type clock dir end ports { {tck clk in 1 0} } } {name node type conduit dir end ports { {tms tms in 1 1} {tdi tdi in 1 2} {tdo tdo out 1 0} {ena ena in 1 3} {usr1 usr1 in 1 4} {clr clr in 1 5} {clrn clrn in 1 6} {jtag_state_tlr jtag_state_tlr in 1 7} {jtag_state_rti jtag_state_rti in 1 8} {jtag_state_sdrs jtag_state_sdrs in 1 9} {jtag_state_cdr jtag_state_cdr in 1 10} {jtag_state_sdr jtag_state_sdr in 1 11} {jtag_state_e1dr jtag_state_e1dr in 1 12} {jtag_state_pdr jtag_state_pdr in 1 13} {jtag_state_e2dr jtag_state_e2dr in 1 14} {jtag_state_udr jtag_state_udr in 1 15} {jtag_state_sirs jtag_state_sirs in 1 16} {jtag_state_cir jtag_state_cir in 1 17} {jtag_state_sir jtag_state_sir in 1 18} {jtag_state_e1ir jtag_state_e1ir in 1 19} {jtag_state_pir jtag_state_pir in 1 20} {jtag_state_e2ir jtag_state_e2ir in 1 21} {jtag_state_uir jtag_state_uir in 1 22} {ir_in ir_in in 5 23} {irq irq out 1 1} {ir_out ir_out out 5 2} } clock clock assign {debug.controlledBy {link_0} } moduleassign {debug.virtualInterface.link_0 {debug.endpointLink {fabric sld index 1} } } } } </Value>
+    <Value>{{name clock type clock dir end ports { {tck clk in 1 0} } } {name node type conduit dir end ports { {tms tms in 1 1} {tdi tdi in 1 2} {tdo tdo out 1 0} {ena ena in 1 3} {usr1 usr1 in 1 4} {clr clr in 1 5} {clrn clrn in 1 6} {jtag_state_tlr jtag_state_tlr in 1 7} {jtag_state_rti jtag_state_rti in 1 8} {jtag_state_sdrs jtag_state_sdrs in 1 9} {jtag_state_cdr jtag_state_cdr in 1 10} {jtag_state_sdr jtag_state_sdr in 1 11} {jtag_state_e1dr jtag_state_e1dr in 1 12} {jtag_state_pdr jtag_state_pdr in 1 13} {jtag_state_e2dr jtag_state_e2dr in 1 14} {jtag_state_udr jtag_state_udr in 1 15} {jtag_state_sirs jtag_state_sirs in 1 16} {jtag_state_cir jtag_state_cir in 1 17} {jtag_state_sir jtag_state_sir in 1 18} {jtag_state_e1ir jtag_state_e1ir in 1 19} {jtag_state_pir jtag_state_pir in 1 20} {jtag_state_e2ir jtag_state_e2ir in 1 21} {jtag_state_uir jtag_state_uir in 1 22} {ir_in ir_in in 5 23} {irq irq out 1 1} {ir_out ir_out out 5 2} } clock clock assign {debug.controlledBy {link_0} } moduleassign {debug.virtualInterface.link_0 {debug.endpointLink {fabric sld index 1} } } } } {{name clock type clock dir end ports { {tck clk in 1 0} } } {name node type conduit dir end ports { {tms tms in 1 1} {tdi tdi in 1 2} {tdo tdo out 1 0} {ena ena in 1 3} {usr1 usr1 in 1 4} {clr clr in 1 5} {clrn clrn in 1 6} {jtag_state_tlr jtag_state_tlr in 1 7} {jtag_state_rti jtag_state_rti in 1 8} {jtag_state_sdrs jtag_state_sdrs in 1 9} {jtag_state_cdr jtag_state_cdr in 1 10} {jtag_state_sdr jtag_state_sdr in 1 11} {jtag_state_e1dr jtag_state_e1dr in 1 12} {jtag_state_pdr jtag_state_pdr in 1 13} {jtag_state_e2dr jtag_state_e2dr in 1 14} {jtag_state_udr jtag_state_udr in 1 15} {jtag_state_sirs jtag_state_sirs in 1 16} {jtag_state_cir jtag_state_cir in 1 17} {jtag_state_sir jtag_state_sir in 1 18} {jtag_state_e1ir jtag_state_e1ir in 1 19} {jtag_state_pir jtag_state_pir in 1 20} {jtag_state_e2ir jtag_state_e2ir in 1 21} {jtag_state_uir jtag_state_uir in 1 22} {ir_in ir_in in 5 23} {irq irq out 1 1} {ir_out ir_out out 5 2} } clock clock assign {debug.controlledBy {link_1} } moduleassign {debug.virtualInterface.link_1 {debug.endpointLink {fabric sld index 2} } } } } {{name clock type clock dir end ports { {tck clk in 1 0} } } {name node type conduit dir end ports { {tms tms in 1 1} {tdi tdi in 1 2} {tdo tdo out 1 0} {ena ena in 1 3} {usr1 usr1 in 1 4} {clr clr in 1 5} {clrn clrn in 1 6} {jtag_state_tlr jtag_state_tlr in 1 7} {jtag_state_rti jtag_state_rti in 1 8} {jtag_state_sdrs jtag_state_sdrs in 1 9} {jtag_state_cdr jtag_state_cdr in 1 10} {jtag_state_sdr jtag_state_sdr in 1 11} {jtag_state_e1dr jtag_state_e1dr in 1 12} {jtag_state_pdr jtag_state_pdr in 1 13} {jtag_state_e2dr jtag_state_e2dr in 1 14} {jtag_state_udr jtag_state_udr in 1 15} {jtag_state_sirs jtag_state_sirs in 1 16} {jtag_state_cir jtag_state_cir in 1 17} {jtag_state_sir jtag_state_sir in 1 18} {jtag_state_e1ir jtag_state_e1ir in 1 19} {jtag_state_pir jtag_state_pir in 1 20} {jtag_state_e2ir jtag_state_e2ir in 1 21} {jtag_state_uir jtag_state_uir in 1 22} {ir_in ir_in in 5 23} {irq irq out 1 1} {ir_out ir_out out 5 2} } clock clock assign {debug.controlledBy {link_2} } moduleassign {debug.virtualInterface.link_2 {debug.endpointLink {fabric sld index 3} } } } } </Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>7</C>
@@ -58,17 +58,17 @@
    <SOPCModuleParameter>
     <C>12</C>
     <Name>SETTINGS</Name>
-    <Value>{mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 prefer_host {} } </Value>
+    <Value>{mfr_code 110 type_code 3 version 1 instance 0 ir_width 5 prefer_host {} } {mfr_code 110 type_code 3 version 1 instance 1 ir_width 5 prefer_host {} } {mfr_code 110 type_code 3 version 1 instance 2 ir_width 5 prefer_host {} } </Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>13</C>
     <Name>COUNT</Name>
-    <Value>1</Value>
+    <Value>3</Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>14</C>
     <Name>N_SEL_BITS</Name>
-    <Value>1</Value>
+    <Value>2</Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>15</C>
@@ -78,7 +78,7 @@
    <SOPCModuleParameter>
     <C>16</C>
     <Name>NODE_INFO</Name>
-    <Value>00001000000110000110111000000000</Value>
+    <Value>000010000001100001101110000000100000100000011000011011100000000100001000000110000110111000000000</Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>17</C>
@@ -117,7 +117,7 @@
    <SOPCModuleParameter>
     <C>24</C>
     <Name>DESIGN_HASH</Name>
-    <Value>5e00fa9e433d4483f237</Value>
+    <Value>161ab5540758928f1238</Value>
    </SOPCModuleParameter>
    <SOPCModuleParameter>
     <C>25</C>
@@ -130,7 +130,7 @@
     <Value>{width 4 latency 0} </Value>
    </SOPCModuleParameter>
   </SOPCModule>
-  <SystemID>947751141</SystemID>
+  <SystemID>1030227731</SystemID>
  </SOPCSystem>
  <SchemaVersion>schema_2013-01-18</SchemaVersion>
 </ProgramExecution>

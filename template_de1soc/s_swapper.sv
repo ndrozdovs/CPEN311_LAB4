@@ -3,7 +3,7 @@ module s_swapper (
     input rst,
     input start,
     input [7:0] s_data,
-    input [23:0] secret_key,
+    input logic [23:0] secret_key,
     output logic [7:0]address,
     output logic [7:0]data,
     output logic s_mem_wren,
@@ -53,7 +53,7 @@ module s_swapper (
                                            state <= BULLSHIT;
                                            address <= index_i;
                                        end
-                BULLSHIT_WAIT :        state <= SI_RETRIEVE_WAIT;
+                BULLSHIT :        state <= SI_RETRIEVE_WAIT;
                 SI_RETRIEVE_WAIT :     begin 
                                          state <= GET_J;
                                          address <= index_i;

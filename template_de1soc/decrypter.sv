@@ -37,7 +37,6 @@ module decrypter (
     parameter [11:0] ENC_RETRIEVE = 12'b0000_0000_1101;
     parameter [11:0] BULLSHIT_WAIT_K = 12'b0000_0000_1110;
     parameter [11:0] ENC_RETRIEVE_WAIT = 12'b0000_0000_1111;
-    parameter [11:0] DECRYPT_DATA = 12'b0001_0000_0000;
     parameter [11:0] D_STORE = 12'b0000_0010_0000;
     parameter [11:0] D_STORE_CONFIRM = 12'b0000_0010_0001;
     
@@ -119,21 +118,18 @@ module decrypter (
                 BULLSHIT_WAIT_K :      state <= ENC_RETRIEVE_WAIT;
                 ENC_RETRIEVE_WAIT :    begin
                                            ek_data <= e_read_data;
-                                           state <= DECRYPT_DATA;
-                                       end 
-                DECRYPT_DATA :         begin
-                                           data_d <= sf_data ^ ek_data;
                                            state <= D_STORE;
-                                       end
+                                       end 
                 D_STORE :              begin
-                                           address_d <= index_k;
                                            state <= D_STORE_CONFIRM;
+                                           address_d <= index_k;
+                                           data_d <= sf_data ^ ek_data;
                                        end
                 D_STORE_CONFIRM :          state <= (d_read_data == data_d) ? INCREMENT : D_STORE;
                 INCREMENT :            begin
                                            index_i <= index_i + 1'b1;
                                            index_k <= index_k + 1'b1;
-                                           state <= (index_k == 8'd1) ? DONE : SI_RETRIEVE;
+                                           state <= (index_k == 8'd31) ? DONE : SI_RETRIEVE;
                                        end
                 DONE :                 state <= IDLE;
                 default :              state <= IDLE;       

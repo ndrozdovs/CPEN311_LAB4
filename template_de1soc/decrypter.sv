@@ -10,7 +10,6 @@ module decrypter (
     output logic [7:0]address_e,
     output logic [7:0]address_d,
     output logic [7:0]data_s,
-    output logic [7:0]data_e,
     output logic [7:0]data_d,
     output logic s_mem_wren,
     output logic d_mem_wren,

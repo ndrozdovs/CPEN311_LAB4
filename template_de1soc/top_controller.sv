@@ -46,30 +46,14 @@ module top_controller (
     logic [7:0] s_init_data;
     logic [7:0] s_swap_address;
     logic [7:0] s_swap_data;
-	 logic [23:0] secret_key = 24'b00000000_00000010_01001001;
+	logic [23:0] secret_key = 24'b00000000_00000010_01001001;
 
     s_initializer init(clk, rst, s_init_start, s_read_data, s_init_address, s_init_data, s_init_wren, s_init_done);
 
 	s_swapper swap(clk, rst, s_swap_start, s_read_data, secret_key, s_swap_address, s_swap_data, s_swap_wren, s_swap_done);
 
-    decrypter decr(
-        clk,
-        rst,
-        decr_start,
-        s_read_data,
-        e_read_data,
-        d_read_data,
-        secret_key,
-        s_decr_address,
-        e_decr_address,
-        d_decr_address,
-        s_decr_data,
-        e_decr_data,
-        d_decr_data,
-        s_decr_wren,
-        d_decr_wren,
-        decr_done
-    );
+    decrypter decr(clk, rst, decr_start, s_read_data, e_read_data, d_read_data, secret_key, s_decr_address, e_decr_address,
+                   d_decr_address, s_decr_data, d_decr_data, s_decr_wren, d_decr_wren, decr_done);
 
     always_ff @(posedge clk, posedge rst)
     begin

@@ -53,7 +53,7 @@ module s_swapper (
                                            state <= BULLSHIT;
                                            address <= index_i;
                                        end
-                BULLSHIT_WAIT :        state <= SI_RETRIEVE_WAIT;
+                BULLSHIT :             state <= SI_RETRIEVE_WAIT;
                 SI_RETRIEVE_WAIT :     begin 
                                          state <= GET_J;
                                          address <= index_i;

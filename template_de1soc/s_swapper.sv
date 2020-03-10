@@ -28,7 +28,6 @@ module s_swapper (
     
     parameter [7:0] BULLSHIT = 8'b0000_1010;
 
-    logic [7:0] count;
     logic [7:0] state;
     logic [7:0] key_value;
 
@@ -41,14 +40,19 @@ module s_swapper (
     always_ff @(posedge clk, posedge rst)
     begin
         if (rst) begin
-            count <= 8'b0;
+            index_i = 8'b0;
+            index_j = 8'b0;
             state <= IDLE;
         end
 
         else 
         begin
             case (state)
-                IDLE :                 state <= (start) ? SI_RETRIEVE : IDLE;
+                IDLE :                 begin 
+                                           state <= (start) ? SI_RETRIEVE : IDLE;
+                                           index_i <= 8'b0;
+                                           index_j <= 8'b0;
+                                       end
                 SI_RETRIEVE :          begin 
                                            state <= BULLSHIT;
                                            address <= index_i;

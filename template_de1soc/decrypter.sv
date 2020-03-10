@@ -13,7 +13,8 @@ module decrypter (
     output logic [7:0]data_d,
     output logic s_mem_wren,
     output logic d_mem_wren,
-    output logic done
+    output logic found_key,
+    output logic decr_done
 );
 
     parameter [11:0] IDLE = 12'b0000_0000_0010;  
@@ -38,12 +39,12 @@ module decrypter (
     parameter [11:0] ENC_RETRIEVE_WAIT = 12'b0000_0000_1111;
     parameter [11:0] D_STORE = 12'b0000_0010_0000;
     parameter [11:0] D_STORE_CONFIRM = 12'b0000_0010_0001;
+
+    parameter [11:0] CHECK_D = 12'b0001_0000_0000;
     
     parameter [11:0] INCREMENT = 12'b0000_0000_1000;
     parameter [11:0] DONE = 12'b1000_0000_1011;
-    
 
-    logic [7:0] count;
     logic [11:0] state;
     logic [7:0] key_value;
 
@@ -60,14 +61,21 @@ module decrypter (
     always_ff @(posedge clk, posedge rst)
     begin
         if (rst) begin
-            count <= 8'b0;
+            index_i = 8'b0000_0001;
+            index_j = 8'b0;
+            index_k = 8'b0;
             state <= IDLE;
         end
 
         else 
         begin
             case (state)
-                IDLE :                 state <= (start) ? SI_RETRIEVE : IDLE;
+                IDLE :                 begin 
+                                           state <= (start) ? SI_RETRIEVE : IDLE;
+                                           index_i <= 8'b0000_0001;
+                                           index_j <= 8'b0;
+                                           index_k <= 8'b0;
+                                       end
                 SI_RETRIEVE :          begin 
                                            state <= BULLSHIT_WAIT;
                                            address_s <= index_i;
@@ -124,10 +132,17 @@ module decrypter (
                                            address_d <= index_k;
                                            data_d <= sf_data ^ ek_data;
                                        end
-                D_STORE_CONFIRM :          state <= (d_read_data == data_d) ? INCREMENT : D_STORE;
+                D_STORE_CONFIRM :          state <= (d_read_data == data_d) ? CHECK_D : D_STORE;
+                CHECK_D :              begin    
+                                           found_key <= 1'b0;
+                                           if(((data_d >= 8'd97) && (data_d <= 8'd122)) || data_d == 8'd32) state <= INCREMENT;
+                                           else 
+                                           state <= DONE;
+                                       end
                 INCREMENT :            begin
                                            index_i <= index_i + 1'b1;
                                            index_k <= index_k + 1'b1;
+                                           if(index_k == 8'd31) found_key <= 1'b1;
                                            state <= (index_k == 8'd31) ? DONE : SI_RETRIEVE;
                                        end
                 DONE :                 state <= IDLE;
@@ -138,7 +153,7 @@ module decrypter (
 
     always_comb 
     begin
-        done = state[11];
+        decr_done = state[11];
         s_mem_wren = state[4];
         d_mem_wren = state[5];
     end

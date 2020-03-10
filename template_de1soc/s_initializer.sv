@@ -78,18 +78,21 @@ module s_initializer (
         else 
         begin
             case (state)
-                IDLE :      state <= start ? WRITE_DATA : IDLE; 
-                WRITE_DATA : state <= CONFIRM_DATA;
-                CONFIRM_DATA :   begin
+                IDLE :         begin
+                                   state <= start ? WRITE_DATA : IDLE; 
+                                   count <= 8'b0;
+                               end 
+                WRITE_DATA :   state <= CONFIRM_DATA;
+                CONFIRM_DATA : begin
                                     if (s_read_data == count) state <= INCREMENT;
                                     else state <= WRITE_DATA;
                                  end
-                INCREMENT : begin 
-                                count <= count + 1'b1;
-                                state <= (count == 8'd255) ? DONE : WRITE_DATA;
-                            end
-                DONE :      state <= IDLE;
-                default:    state <= IDLE;
+                INCREMENT :    begin 
+                                   count <= count + 1'b1;
+                                   state <= (count == 8'd255) ? DONE : WRITE_DATA;
+                               end
+                DONE :         state <= IDLE;
+                default:       state <= IDLE;
             endcase
         end
     end

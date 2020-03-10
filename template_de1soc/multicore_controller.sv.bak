@@ -1,0 +1,50 @@
+module multicore_controller(
+    input clk,
+    input reset_n,
+
+    output logic [9:0]LED,
+    output logic [7:0] Seven_Seg_Val[5:0]
+
+    );
+
+    // Number of cores to instantiate
+    parameter num_cores = 4;
+
+    logic write_en_s, write_en_d, s_init_rst, top_done, cores_start;
+	logic [7:0] address_s, data_s, s_read_data, address_d, data_d, d_read_data, address_e, e_read_data;
+
+    logic [23:0] starting_secret_key [num_cores:0];
+    logic [23:0] solved_secret_key [num_cores:0];
+    logic [23:0] num = 24'b00111111_11111111_11111111;
+    logic [23:0] some;
+
+    assign some = num / numcores;
+
+    assign starting_secret_key[0] = 24'b0;
+
+    //------------STARTING KEY GENERATION------------
+    genvar j;
+    generate
+        for (j = 1; j < num_cores; j = j + 1) begin : starting_key_generator
+            starting_secret_key[j] = starting_secret_key + some;
+        end
+    endgenerate
+
+    // encrypted message instantiation
+   	e_rom rom(address_e, clk, e_read_data);
+
+    //------------CORE MEMORY AND CONTROLLER GENERATION-------------
+    genvar i;
+    generate
+        for (i = 0; i < num_cores; i = i + 1) begin : core_generator   
+            s_memory s_mem_[i](address_s_[i], clk, data_s_[i], write_en_s_[i], s_read_data_[i]);
+
+            d_memory d_mem_[i](address_d_[i], clk, data_d_[i], write_en_d_[i], d_read_data_[i]);
+            
+            top_controller core_[i](clk, s_init_rst_[i], cores_start, starting_secret_key[[i]], s_read_data_[i], d_read_data_[i], e_read_data_[i], address_s_[i], address_d_[i], address_e_[i],
+                                data_s_[i], data_d_[i], write_en_s_[i], write_en_d_[i], top_done_[i], solved_secret_key[[i]]);
+        end
+    endgenerate
+
+
+endmodule
